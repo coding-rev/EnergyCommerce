@@ -9,6 +9,7 @@ interface ModalProps {
   onClose: () => void;
   children: ReactNode;
   className?: string;
+  backdropClassName?: string;
 }
 
 export function Modal({
@@ -17,6 +18,7 @@ export function Modal({
   onClose,
   children,
   className = "",
+  backdropClassName = "",
 }: ModalProps) {
   const titleId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -67,7 +69,7 @@ export function Modal({
 
   return (
     <div
-      className="modal-backdrop"
+      className={`modal-backdrop ${backdropClassName}`.trim()}
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}

@@ -19,7 +19,7 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
   const stock = Math.max(0, product.quantity);
 
   function addToCart() {
-    addItems(quantity);
+    addItems(product, quantity);
     setFeedback(
       getMessage(quantity === 1 ? "product.addedSingular" : "product.addedPlural", {
         count: quantity,
@@ -42,7 +42,6 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
           </figure>
 
           <div className="product-information">
-            <p className="product-eyebrow">{product.brand}</p>
             <h1 className="product-title">{product.name}</h1>
             <Text
               as="p"
@@ -93,12 +92,15 @@ export function ProductShowcase({ product }: ProductShowcaseProps) {
           </div>
         </article>
 
-        <section className="product-section" aria-labelledby="description-heading">
+        <section
+          className="product-section product-description-section"
+          aria-labelledby="description-heading"
+        >
           <Text as="h2" id="description-heading" messageKey="product.description" />
           <p className="product-description">{product.description}</p>
         </section>
 
-        <section className="product-section" aria-labelledby="specifications-heading">
+        <section className="product-specifications" aria-labelledby="specifications-heading">
           <Text as="h2" id="specifications-heading" messageKey="product.specifications" />
           <dl className="specifications">
             <dt><Text messageKey="product.brand" /></dt>

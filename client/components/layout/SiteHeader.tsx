@@ -6,9 +6,11 @@ import { getMessage } from "../../lib/language";
 import { ProductImage } from "../ui/ProductImage";
 import { SearchModal } from "./SearchModal";
 import { useBasket } from "./BasketContext";
+import { BasketDrawer } from "./BasketDrawer";
 
 export function SiteHeader() {
   const [searchOpen, setSearchOpen] = useState(false);
+  const [basketOpen, setBasketOpen] = useState(false);
   const { count } = useBasket();
 
   return (
@@ -30,16 +32,18 @@ export function SiteHeader() {
           <span className="search-icon" aria-hidden="true" />
           <span>{getMessage("globalSearch.placeholder")}</span>
         </button>
-        <Link
+        <button
           className="cart-button"
-          href="/product"
+          type="button"
           aria-label={getMessage("basket.label", { count })}
+          onClick={() => setBasketOpen(true)}
         >
           <ProductImage src="/basket.svg" alt="" />
           {count > 0 && <span className="cart-count">{count}</span>}
-        </Link>
+        </button>
       </header>
       {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
+      {basketOpen && <BasketDrawer onClose={() => setBasketOpen(false)} />}
     </>
   );
 }

@@ -65,5 +65,15 @@
   "product.increaseQuantity": "Increase quantity",
   "basket.label": "Basket, {{count}} items",
   "basket.count": "{{count}}",
+  "basket.title": "Your basket",
+  "basket.empty": "Your basket is empty.",
+  "basket.quantity": "Quantity: {{count}}",
+  "basket.remove": "Remove",
+  "basket.removeItem": "Remove {{name}}",
+  "basket.decreaseQuantity": "Decrease {{name}} quantity",
+  "basket.increaseQuantity": "Increase {{name}} quantity",
+  "basket.subtotal": "Subtotal",
+  "basket.total": "Total",
+  "basket.checkout": "Checkout",
   "footer.legal": "Octopus Energy Ltd is a company registered in England and Wales. Registered number: 09263424. Registered office: 33 Holborn, London, EC1N 2HT. Trading office: 20-24 Broadwick Street, London, W1F 8HT"
 }
