@@ -2,12 +2,12 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { http, HttpResponse } from "msw";
 import { afterAll, afterEach, beforeAll, describe, expect, it } from "vitest";
-import { ProductPage } from "../components/product/ProductPage";
-import { BasketProvider } from "../components/layout/BasketContext";
-import { SiteHeader } from "../components/layout/SiteHeader";
-import { graphqlEndpoint } from "../mocks/msw/endpoint";
-import { server } from "../mocks/msw/server";
-import { productFixture } from "../mocks/msw/fixtures";
+import { ProductPage } from "../../components/product/ProductPage";
+import { BasketProvider } from "../../components/layout/BasketContext";
+import { SiteHeader } from "../../components/layout/SiteHeader";
+import { graphqlEndpoint } from "../../mocks/msw/endpoint";
+import { server } from "../../mocks/msw/server";
+import { productFixture } from "../../mocks/msw/fixtures";
 
 beforeAll(() => server.listen({ onUnhandledRequest: "error" }));
 afterEach(() => server.resetHandlers());

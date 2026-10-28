@@ -35,8 +35,18 @@ The app runs at [http://localhost:3000](http://localhost:3000); the provided pro
 ```sh
 cd client
 pnpm test
+pnpm test:unit
+pnpm test:integration
 pnpm exec tsc --noEmit
 pnpm build
+```
+
+Browser end-to-end tests use Playwright and start the Next app and GraphQL stub automatically. Install Chromium once, then run:
+
+```sh
+cd client
+pnpm exec playwright install chromium
+pnpm test:e2e
 ```
 
 ## Design Process

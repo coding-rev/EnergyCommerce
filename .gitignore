@@ -11,6 +11,10 @@ out
 storybook-static/
 *.tsbuildinfo
 
+# Playwright
+test-results/
+playwright-report/
+
 # production
 build
 
